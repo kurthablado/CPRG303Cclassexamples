@@ -1,10 +1,11 @@
-import { ReactNode } from "react";
+
 import { Text } from "react-native";
 
-
-export default function ListItemRenderComp({item = {id:0, text:"default text"}}){
+// declaring type with props in typescript
+export default function ListItemRenderComp( {item}:{ item:{id:number,text:string} } ){
     
     return(
         <Text>{item.text}</Text>
     );
+
 }
