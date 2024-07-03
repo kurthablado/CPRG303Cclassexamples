@@ -4,9 +4,16 @@ import React, { useState } from 'react';
 import { Alert, Button, FlatList, Image, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import MyComponent from './src/components/my-component';
 import ListItemRenderComp from './src/components/list-render-comp';
+import CompWithProps from './src/components/component-with-props';
+import Counter from './src/components/counter';
 
 function App(): React.JSX.Element {
 
+  let person = {
+    fname: 'John',
+    age: 25,
+    email: 'john@sait.ca'
+  };
 
   let condition = false;
   let dynamicStyles = condition ? styles.blueText : styles.redText;
@@ -46,7 +53,8 @@ function App(): React.JSX.Element {
       <Text>Password:</Text>
       <TextInput placeholder='password' keyboardType='default' secureTextEntry={true} />
       
-
+      {/* <CompWithProps personObj={person} /> */}
+      <Counter />
 
       {/* <FlatList data={data} renderItem={ListItemRenderComp} keyExtractor={ item => item.id.toString() } /> */}
     </View>
